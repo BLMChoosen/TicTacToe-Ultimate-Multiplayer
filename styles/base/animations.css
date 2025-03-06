@@ -1,0 +1,20 @@
+@keyframes globalVictory {
+    0% { background-color: #f0f0f0; }
+    50% { background-color: #ffeb3b; }
+    100% { background-color: #f0f0f0; }
+  }
+  
+  @keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  body.global-victory {
+    animation: globalVictory 2s ease-out forwards;
+  }

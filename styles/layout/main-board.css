@@ -7,8 +7,9 @@
     margin-bottom: 20px;
   }
   
-  .status {
-    font-size: 20px;
-    margin-bottom: 20px;
-    color: $primary-color;
+  @media (max-width: 1200px) {
+    .board {
+      grid-template-columns: repeat(3, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+    }
   }
