@@ -1,0 +1,11 @@
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/base';
+
+@import 'layout/main-board';
+
+@import 'components/sub-board';
+@import 'components/cell';
+@import 'components/overlay';
+@import 'components/buttons';
+@import 'components/timer';

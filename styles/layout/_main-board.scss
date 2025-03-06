@@ -1,0 +1,14 @@
+.board {
+    display: grid;
+    grid-template-columns: repeat(3, 330px);
+    grid-template-rows: repeat(3, 330px);
+    gap: 10px;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  
+  .status {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: $primary-color;
+  }
