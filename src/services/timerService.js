@@ -1,6 +1,6 @@
-import { currentPlayer, timeX, timeO, gameOver } from '../store/gameState';
-import { endGame } from './gameService';
-import { formatTime } from '../utils/helpers';
+import { currentPlayer, timeX, timeO, gameOver } from '../store/gameState.js';
+import { endGame } from './gameService.js';
+import { formatTime } from '../utils/helpers.js';
 
 export const startTimer = () => {
   const updateTimerDisplay = () => {
@@ -9,7 +9,7 @@ export const startTimer = () => {
   };
 
   if (timerInterval) clearInterval(timerInterval);
-  
+
   timerInterval = setInterval(() => {
     if (gameOver) return;
 

@@ -1,10 +1,10 @@
 import {
     currentPlayer, gameBoard, subBoardStates, selectedSubBoard,
     gameOver, timerInterval, resetGameState
-  } from '../store/gameState';
-  import { checkWinner, checkDraw, checkSubBoardStatus } from '../utils/gameLogic';
-  import { startTimer } from './timerService';
-  import { createSubBoards } from '../components/SubBoards';
+  } from '../store/gameState.js';
+  import { checkWinner, checkDraw, checkSubBoardStatus } from '../utils/gameLogic.js';
+  import { startTimer } from './timerService.js';
+  import { createSubBoards } from '../components/SubBoards.js';
   
   const updateGameStatus = (message) => {
     document.getElementById("status").textContent = message;

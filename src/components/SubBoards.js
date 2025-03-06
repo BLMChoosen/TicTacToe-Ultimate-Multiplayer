@@ -1,6 +1,6 @@
-import { gameBoard, selectedSubBoard } from '../store/gameState';
-import { updateActiveSubBoard } from '../utils/gameLogic';
-import { makeMove } from '../services/gameService';
+import { gameBoard, subBoardStates, selectedSubBoard } from '../store/gameState.js';
+import { updateActiveSubBoard } from '../utils/gameLogic.js';
+import { makeMove } from '../services/gameService.js';
 
 export const createSubBoards = () => {
   const mainBoard = document.getElementById("main-board");
