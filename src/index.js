@@ -1,5 +1,5 @@
-import { createSubBoards } from './components/SubBoards';
-import { startTimer, resetGame } from './services/gameService';
+import { createSubBoards } from './components/SubBoards.js';
+import { startTimer, resetGame } from './services/gameService.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   createSubBoards();
