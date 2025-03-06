@@ -1,19 +1,23 @@
-export let currentPlayer = "X";
-export let gameBoard = Array(9).fill(null);
-export let subBoardStates = Array(9).fill().map(() => Array(9).fill(null));
-export let selectedSubBoard = null;
-export let gameOver = false;
-export let timeX = 600;
-export let timeO = 600;
-export let timerInterval = null;
+// Alterando as variáveis para fazer parte de um único objeto, facilitando o gerenciamento
+export const gameState = {
+  currentPlayer: "X",
+  gameBoard: Array(9).fill(null),
+  subBoardStates: Array(9).fill().map(() => Array(9).fill(null)),
+  selectedSubBoard: null,
+  gameOver: false,
+  timeX: 600,
+  timeO: 600,
+  timerInterval: null,
 
-export const resetGameState = () => {
-  currentPlayer = "X";
-  gameBoard.fill(null);
-  subBoardStates = Array(9).fill().map(() => Array(9).fill(null));
-  selectedSubBoard = null;
-  gameOver = false;
-  timeX = 600;
-  timeO = 600;
-  if (timerInterval) clearInterval(timerInterval);
+  resetGameState() {
+    this.currentPlayer = "X";
+    this.gameBoard.fill(null);
+    this.subBoardStates = Array(9).fill().map(() => Array(9).fill(null));
+    this.selectedSubBoard = null;
+    this.gameOver = false;
+    this.timeX = 600;
+    this.timeO = 600;
+    if (this.timerInterval) clearInterval(this.timerInterval);
+    this.timerInterval = null;
+  }
 };

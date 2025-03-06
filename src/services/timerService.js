@@ -1,22 +1,22 @@
-import { currentPlayer, timeX, timeO, gameOver } from '../store/gameState.js';
+import { gameState } from '../store/gameState.js';  // Importa o objeto inteiro
 import { endGame } from './gameService.js';
 import { formatTime } from '../utils/helpers.js';
 
 export const startTimer = () => {
   const updateTimerDisplay = () => {
-    document.getElementById('timer-x').textContent = `X: ${formatTime(timeX)}`;
-    document.getElementById('timer-o').textContent = `O: ${formatTime(timeO)}`;
+    document.getElementById('timer-x').textContent = `X: ${formatTime(gameState.timeX)}`;
+    document.getElementById('timer-o').textContent = `O: ${formatTime(gameState.timeO)}`;
   };
 
-  if (timerInterval) clearInterval(timerInterval);
+  if (gameState.timerInterval) clearInterval(gameState.timerInterval);  // Usando o timerInterval do gameState
 
-  timerInterval = setInterval(() => {
-    if (gameOver) return;
+  gameState.timerInterval = setInterval(() => {
+    if (gameState.gameOver) return;
 
-    currentPlayer === 'X' ? timeX-- : timeO--;
+    gameState.currentPlayer === 'X' ? gameState.timeX-- : gameState.timeO--;  // Atualizando as variáveis no gameState
     updateTimerDisplay();
 
-    if (timeX <= 0) endGame('O', 'Tempo esgotado para X!');
-    if (timeO <= 0) endGame('X', 'Tempo esgotado para O!');
+    if (gameState.timeX <= 0) endGame('O', 'Tempo esgotado para X!');
+    if (gameState.timeO <= 0) endGame('X', 'Tempo esgotado para O!');
   }, 1000);
 };

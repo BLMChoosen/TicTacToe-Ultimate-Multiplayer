@@ -1,4 +1,4 @@
-import { gameBoard, subBoardStates, selectedSubBoard } from '../store/gameState.js';
+import { gameState } from '../store/gameState.js';  // Acessando o objeto gameState
 import { updateActiveSubBoard } from '../utils/gameLogic.js';
 import { makeMove } from '../services/gameService.js';
 
@@ -8,14 +8,14 @@ export const createSubBoards = () => {
 
   for (let i = 0; i < 9; i++) {
     const subBoard = document.createElement("div");
-    subBoard.className = `sub-board ${gameBoard[i] ? 'taken' : ''}`;
+    subBoard.className = `sub-board ${gameState.gameBoard[i] ? 'taken' : ''}`;
     subBoard.id = `board-${i}`;
 
     for (let j = 0; j < 9; j++) {
       const cell = document.createElement("div");
-      cell.className = `cell ${subBoardStates[i][j] ? 'taken' : ''}`;
+      cell.className = `cell ${gameState.subBoardStates[i][j] ? 'taken' : ''}`;
       cell.id = `cell-${i}-${j}`;
-      cell.textContent = subBoardStates[i][j] || '';
+      cell.textContent = gameState.subBoardStates[i][j] || '';
       cell.onclick = () => makeMove(i, j);
       subBoard.appendChild(cell);
     }
