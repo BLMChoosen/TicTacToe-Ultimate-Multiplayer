@@ -16,6 +16,10 @@
     display: inline-block;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   }
+  .status, .timer {
+    margin: 10px auto; /* Centraliza os elementos */
+    width: fit-content; /* Ajusta largura ao conteúdo */
+  }
   
   #timers {
     display: flex;

@@ -1,0 +1,12 @@
+/* Estilos do tutorial */
+.highlight {
+    font-weight: bold;
+    color: #e74c3c;
+  }
+  
+  .tutorial-section {
+    margin: 2rem 0;
+    padding: 1.5rem;
+    border-left: 4px solid #3498db;
+    background-color: #f8f9fa;
+  }

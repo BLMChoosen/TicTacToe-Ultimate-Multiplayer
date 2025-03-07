@@ -1,0 +1,10 @@
+/* Importação de todos os estilos */
+@import url('base/reset.css');
+@import url('base/animations.css');
+@import url('layout/main-board.css');
+@import url('layout/containers.css');
+@import url('components/sub-board.css');
+@import url('components/buttons.css');
+@import url('components/game-status.css');
+@import url('components/menu.css');
+@import url('components/tutorial.css');

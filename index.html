@@ -3,44 +3,38 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ultimate Tic-Tac-Toe</title>
-  
-  <!-- CSS Base -->
-  <link rel="stylesheet" href="styles/base/reset.css">
-  <link rel="stylesheet" href="styles/base/animations.css">
-  
-  <!-- CSS de Layout -->
-  <link rel="stylesheet" href="styles/layout/main-board.css">
-  
-  <!-- Componentes -->
-  <link rel="stylesheet" href="styles/components/sub-board.css">
-  <link rel="stylesheet" href="styles/components/buttons.css">
-  <link rel="stylesheet" href="styles/components/game-status.css">
+  <title>Menu Principal - Ultimate Tic-Tac-Toe</title>
+  <link rel="stylesheet" href="styles/main.css">
 </head>
 <body>
   <h1>Ultimate Tic-Tac-Toe</h1>
   
-  <div class="status">
-    <p id="status">Vez do jogador X (Escolha um sub-tabuleiro)</p>
-  </div>
-  
-  <div class="timer">
-    <p id="timer-x">Tempo restante (X): 10:00</p>
-    <p id="timer-o">Tempo restante (O): 10:00</p>
-  </div>
-  
-  <div class="board" id="main-board"></div>
-  
-  <button class="reset-btn" id="reset-button">Reiniciar Jogo</button>
-  <br>
-  
-  <a href="ComoJogar.html" class="how-to-play-link">Como jogar</a>
-  
-  <footer>
-    <h5>Créditos: <a href="https://github.com/BLMChoosen/TicTacToe-Ultimate-Multiplayer" class="credits-link">Felipe Somacal e Davi Oliz</a></h5>
-  </footer>
+  <div class="container">
+    <!-- Botões do Menu -->
+    <div class="menu-options"> <!-- Nova classe para agrupar botões -->
+        <a href="pvp.html" class="button menu-option">Jogador vs Jogador (Local)</a>
+        <button class="button menu-option coming-soon" disabled>Jogar Online (Em Breve)</button>
+        <button class="button menu-option coming-soon" disabled>Jogar vs IA (Em Breve)</button>
+      </div>
 
-  <!-- Módulo principal JavaScript -->
-  <script type="module" src="index.js"></script>
+    <!-- Tutorial Integrado -->
+    <h2>🏛️ Regras Básicas</h2>
+    <p>Ultimate Tic-Tac-Toe é uma versão mais desafiadora do jogo tradicional da velha. O jogo consiste em <strong>nove</strong> tabuleiros menores dentro de um <strong>grande tabuleiro</strong>. O objetivo é ganhar três tabuleiros menores em sequência (horizontal, vertical ou diagonal), assim como no jogo da velha clássico.</p>
+    
+    <h2>🎲 Como Funciona o Jogo</h2>
+    <p><strong>1.</strong> <span class="highlight">Turnos Alternados</span> – Dois jogadores se revezam jogando como <strong>"X"</strong> e <strong>"O"</strong>.</p>
+    <p><strong>2.</strong> <span class="highlight">Jogando em um Sub-Tabuleiro</span> – O primeiro jogador pode jogar em qualquer casa de qualquer tabuleiro menor.</p>
+    <p><strong>3.</strong> <span class="highlight">Restrição de Movimento</span> – O próximo jogador só pode jogar no tabuleiro correspondente à posição da última jogada.</p>
+    <p><strong>4.</strong> <span class="highlight">Sub-Tabuleiro Vencido</span> – Se um jogador ganhar um sub-tabuleiro, ele é considerado <strong>controlado</strong> por esse jogador.</p>
+    <p><strong>5.</strong> <span class="highlight">Sub-Tabuleiro Cheio</span> – Se um sub-tabuleiro não tiver mais casas disponíveis, os jogadores podem jogar em qualquer tabuleiro ainda disponível.</p>
+    <p><strong>6.</strong> <span class="highlight">Vencendo o Jogo</span> – O primeiro jogador a conquistar <strong>três sub-tabuleiros em sequência</strong> vence a partida.</p>
+
+    <h2>🔄 Reiniciando o Jogo</h2>
+    <p>Clique no botão <strong>"Reiniciar Jogo"</strong> durante a partida para começar uma nova.</p>
+  </div>
+
+  <footer>
+    <h5>Créditos: <a href="https://github.com/BLMChoosen/TicTacToe-Ultimate-Multiplayer">Felipe Somacal e Davi Oliz</a></h5>
+  </footer>
 </body>
 </html>
