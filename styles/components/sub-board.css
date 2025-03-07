@@ -9,10 +9,6 @@
     position: relative;
   }
   
-  .sub-board.active {
-    border-color: #ff5722;
-    box-shadow: 0 0 10px #ff5722;
-  }
   
   .sub-board.taken {
     pointer-events: none;
@@ -55,3 +51,15 @@
   .sub-board .overlay.victory-effect {
     animation: pulse 1s infinite;
   }
+  
+.sub-board.active {
+  border-color: #ff5722;
+  box-shadow: 0 0 15px #ff5722aa; /* Aumente a sombra e adicione transparência */
+  animation: pulse 2s infinite; /* Adicione uma animação se desejar */
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 10px #ff5722aa; }
+  50% { box-shadow: 0 0 20px #ff5722; }
+  100% { box-shadow: 0 0 10px #ff5722aa; }
+}

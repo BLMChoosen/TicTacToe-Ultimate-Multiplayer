@@ -1,5 +1,5 @@
 import { gameState } from '../store/gameState.js';  // Acessando o gameState diretamente
-import { checkWinner, checkDraw, checkSubBoardStatus } from '../utils/gameLogic.js';
+import { checkWinner, checkDraw, checkSubBoardStatus, updateActiveSubBoard} from '../utils/gameLogic.js';
 import { startTimer } from './timerService.js';
 import { createSubBoards } from '../components/SubBoards.js';
 
@@ -10,7 +10,7 @@ const updateGameStatus = (message) => {
 export const makeMove = (boardIndex, cellIndex) => {
   // Verificar se o jogo acabou ou se a célula já está ocupada
   if (
-    gameState.gameOver ||
+    gameState.gameOver || 
     gameState.subBoardStates[boardIndex][cellIndex] ||
     gameState.gameBoard[boardIndex] ||
     (gameState.selectedSubBoard !== null && gameState.selectedSubBoard !== boardIndex)
@@ -34,12 +34,13 @@ export const makeMove = (boardIndex, cellIndex) => {
   }
 
   // Verificar status global do jogo
-  checkGlobalGameStatus(cellIndex); // Passa o cellIndex para determinar o próximo sub-tabuleiro
   switchPlayer();
+  checkGlobalGameStatus(cellIndex); // Passa o cellIndex para determinar o próximo sub-tabuleiro
   startTimer();
 };
 
 const checkGlobalGameStatus = (lastCellIndex) => {
+  // Verifica se o jogo acabou globalmente
   const globalWinner = checkWinner(gameState.gameBoard);
   if (globalWinner) {
     endGame(globalWinner === 'D' ? null : globalWinner, 
@@ -49,6 +50,7 @@ const checkGlobalGameStatus = (lastCellIndex) => {
 
   // Determina qual sub-tabuleiro pode ser jogado a seguir
   gameState.selectedSubBoard = determineNextSubBoard(lastCellIndex);
+  updateActiveSubBoard(); // Adicione esta linha
   updateGameStatus(`Vez do ${gameState.currentPlayer} (Sub-tabuleiro: ${gameState.selectedSubBoard ?? 'Livre'})`);
 };
 
@@ -88,4 +90,5 @@ export const resetGame = () => {
   createSubBoards();
   startTimer();
   updateGameStatus("Vez do Jogador X (Escolha um sub-tabuleiro)");
+  updateActiveSubBoard();
 };
